@@ -1,0 +1,22 @@
+This code contains the data frame of the App.
+It runs on 4  seperate pages for Navigating the app.
+The code for the main file of the app goes as follows:-
+
+import 'package:flutter/material.dart';
+import 'package:world_time/pages/choose_location.dart';
+import 'package:world_time/pages/home.dart';
+import 'package:world_time/pages/loading.dart';
+
+void main() => runApp(MaterialApp(
+  initialRoute: '/',
+  routes: {
+    '/':(context) => loading(),
+    '/home':(context) => Home(),
+    '/location':(context) =>ChooseLocation()
+  }
+));
+
+
+This code sets up a basic navigation system for this World Time App.
+It defines three main pages (screens): Loading, Home, and Choose Location, and sets the initial route to the Loading page. 
+The MaterialApp widget is used to create the app, and it provides a navigation structure using the routes property.
