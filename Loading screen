@@ -1,0 +1,72 @@
+import 'package:flutter/material.dart';
+import 'package:world_time/services/world_time.dart';
+
+class loading extends StatefulWidget {
+  const loading({super.key});
+
+  @override
+  State<loading> createState() => _loadingState();
+}
+
+class _loadingState extends State<loading> {
+
+
+  void setupWorldTime() async {
+    WorldTime instance=WorldTime(location: 'Berlin', flag: 'germany.png', url: 'Europe/Berlin');
+    await instance.getTime();
+    Navigator.pushReplacementNamed(context, '/home',arguments:{
+      'location': instance.location,
+      'flag': instance.flag,
+      'time': instance.time,
+      'isDayTime':instance.isDayTime,
+    });
+  }
+  @override
+  void initState() {
+    super.initState();
+    setupWorldTime();
+  }
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      backgroundColor: Colors.grey[400],
+      body: Center(
+        child:CircularProgressIndicator(),
+      )
+    );
+  }
+}
+
+EXPLANATION:
+The above code sets up a loading screen and ensures a smooth transition to the home screen:
+
+1.Loading Screen Purpose:
+The loading screen serves as the first screen that users see when they launch the World Time App. 
+Its primary purpose is to handle the initialization process and fetch the necessary time data from an external API before proceeding to the home screen. 
+During this loading phase, the user sees a circular progress indicator, indicating that the app is in the process of fetching the data.
+
+2.WorldTime Class and API Data:
+The code uses a custom WorldTime class, which encapsulates the data related to a specific location, its corresponding flag, and the timezone URL needed to fetch time data from an external API. 
+The setupWorldTime() method instantiates a WorldTime object with the values for the 'Berlin' location, 'germany.png' flag, and 'Europe/Berlin' timezone URL.
+
+3.Fetching Time Data:
+The WorldTime class has a method called getTime(), which is responsible for fetching the time data from the API. 
+In the setupWorldTime() method, we use the await keyword before calling getTime(). 
+This makes the setupWorldTime() method wait for the getTime() method to complete before proceeding to the next step.
+
+4.Asynchronous Operations:
+The setupWorldTime() method is marked as asynchronous (async), allowing it to use the await keyword to pause the execution while the getTime() method fetches the data. 
+This ensures that the app won't proceed to the home screen until the necessary time data is available.
+
+5.Navigating to the Home Screen:
+Once the getTime() method completes and successfully fetches the time data, the app uses Navigator.pushReplacementNamed() to navigate to the home screen (/home) and passes the fetched time data as arguments. 
+The pushReplacementNamed() method replaces the loading screen with the home screen, ensuring that the loading screen is not present in the backstack. 
+This gives the appearance of a smooth transition to the home screen once the data is ready.
+
+6.Seamless User Experience:
+By using a loading screen to fetch and prepare the data needed for the home screen, the app ensures a seamless user experience. 
+Users don't have to wait on the home screen while the data is being fetched, as the loading screen handles this process transparently. 
+This approach makes the app feel responsive and user-friendly, even if fetching data from the API takes some time.
+
+=>> In conclusion, the loading screen in this code efficiently manages the initialization process, fetches time data, and smoothly transitions to the home screen once the data is ready. 
+This design choice enhances the user experience and prevents any delays or hiccups when loading data, making the World Time App more user-friendly and professional.
