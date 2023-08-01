@@ -1,5 +1,5 @@
-# world-time-Flutter
-The World Time App is a mobile application built using the Flutter framework, designed to provide users with real-time information about various locations around the world. The app offers a visually appealing and intuitive user interface, allowing users to view the current time and day/night status for different cities and regions.
+# TimeLink
+TimeLink is a mobile application built using the Flutter framework, designed to provide users with real-time information about various locations around the world. The app offers a visually appealing and intuitive user interface, allowing users to view the current time and day/night status for different cities and regions.
 
 Key Features:
 
