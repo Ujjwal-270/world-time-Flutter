@@ -1,4 +1,6 @@
 # TimeLink
+![WhatsApp Image 2024-10-06 at 21 51 31_63af1fdb](https://github.com/user-attachments/assets/0b642e05-a18e-4c2a-bf79-17db380f37ca)
+
 TimeLink is a mobile application built using the Flutter framework, designed to provide users with real-time information about various locations around the world. The app offers a visually appealing and intuitive user interface, allowing users to view the current time and day/night status for different cities and regions.
 
 Key Features:
@@ -10,6 +12,7 @@ Key Features:
 3.Real-time Time Data: The app uses the WorldTime API to fetch accurate and up-to-date time data for different locations across the world. The time data considers the respective time zones and daylight saving time, providing users with precise information.
 
 4.Background Images: The app dynamically changes the background image on the home screen based on the time of day. During daytime, a bright and cheerful image is displayed, while a darker image is shown during nighttime. This feature enhances the user experience and makes the app visually appealing.
+![WhatsApp Image 2024-10-06 at 21 51 35_385409e0](https://github.com/user-attachments/assets/49898b88-add4-4f9e-a3d9-49c3e088e240)
 
 5.Edit Location: The app allows users to easily edit the selected location by tapping on the "Edit Location" button on the home screen. This navigates them to the Choose Location screen, where they can select a new city or region.
 
